@@ -1,4 +1,14 @@
-import logo from './logo.svg';
+import LoginPage from "./pages/loginpages/LoginPage";
+
+function App() {
+  return (
+    <LoginPage />
+  );
+}
+
+export default App;
+
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -21,5 +31,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+export default App;*/

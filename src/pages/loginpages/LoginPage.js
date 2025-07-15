@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'; 
 import { auth, googleProvider } from '../../firebase';
 import { signInWithPopup } from 'firebase/auth';
 

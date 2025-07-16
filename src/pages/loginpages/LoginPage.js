@@ -2,6 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2'; 
 import { auth, googleProvider } from '../../firebase';
 import { signInWithPopup } from 'firebase/auth';
+import { FcGoogle } from 'react-icons/fc';
 
 function LoginPage() {
   const handleGoogleLogin = () => {
@@ -44,8 +45,11 @@ function LoginPage() {
                   <button type="submit" class="btn btn-primary">Ingresar</button>
                 </div>
                 <div>
-                  <button type="button" onClick={handleGoogleLogin}>
-                    Iniciar sesión con Google
+                  <button 
+                  className="btn btn-light border shadow-sm d-flex align-items-center justify-content-center gap-2 px-4 py-2 rounded-pill"
+                  onClick={handleGoogleLogin}>
+                    <FcGoogle size={20} />
+                   <span className="fw-semibold">Iniciar sesión con Google</span>
                   </button>
                 </div>
               </form>

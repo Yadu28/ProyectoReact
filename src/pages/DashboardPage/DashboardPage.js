@@ -1,7 +1,7 @@
 import React from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
-import Swal from 'sweetalert';
+import Swal from 'sweetalert2';
 import { useNavigate, Link } from 'react-router-dom';
 
 function DashboardPage() {
@@ -22,7 +22,7 @@ function DashboardPage() {
         await signOut(auth);
         await Swal.fire({
           icon: 'success',
-          title: 'Sesión cerrada',
+          title: 'Sesión cerrada correctamente',
           showConfirmButton: false,
           timer: 1500,
         });
@@ -38,22 +38,26 @@ function DashboardPage() {
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="mb-4">Panel de Control</h2>
-      <div className="container mt-5">
-      <p>Bienvenido al panel. Aquí puedes acceder a tus datos, configuraciones y más.</p>
-
-      <div className="mt-4">
-        <Link to="/" className="btn btn-secondary me-2">Ir a Inicio</Link>
-        <Link to="/login" className="btn btn-danger">Cerrar Sesión</Link>
+    <>
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container">
+          <Link className="navbar-brand" to="/">MiApp</Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <span className="nav-link active">Inicio</span>
+                <Link className="nav-link active" to="/">Inicio</Link>
               </li>
               <li className="nav-item">
-                <span className="nav-link">Perfil</span>
+                <a className='nav-link' href='/users'>Users</a>
+              </li>
+              
+              <li className="nav-item">
+                <Link className="nav-link" to="/perfil">Perfil</Link>
               </li>
             </ul>
             <button className="btn btn-outline-light" onClick={handleLogout}>
@@ -61,12 +65,28 @@ function DashboardPage() {
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
-      <div className="container mt-5 text-center">
-        <h1>Bienvenido a mi página</h1>
+      {/* Main Content */}
+      <div className="container mt-5">
+        <div className="text-center mb-4">
+          <h1 className="display-5">Bienvenido al Panel de Control</h1>
+          <p className="lead">Administra tus datos, configuraciones y más.</p>
+        </div>
+
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="card shadow">
+              <div className="card-body text-center">
+                <h5 className="card-title mb-3">¿Qué deseas hacer?</h5>
+                <Link to="/" className="btn btn-secondary me-2">Ir a Inicio</Link>
+                <button onClick={handleLogout} className="btn btn-danger">Cerrar Sesión</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

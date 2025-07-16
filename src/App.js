@@ -3,6 +3,7 @@ import LoginPage from "./pages/loginpages/LoginPage";
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import ForgotPasswordPage from './pages/FogortPasswordPage/ForgotPasswordPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
+import UserPage from './pages/UserPage/UserPage';
 import NotFoundPage from "./pages/components/NotFoundPage";
 import ProtectedRoute from './pages/components/ProtectedRoute';
 
@@ -17,6 +18,7 @@ function App() {
       <Route path="/forgot" element={ <ForgotPasswordPage />} />
 
       <Route path="/dashboard" element={<ProtectedRoute> <DashboardPage /> </ProtectedRoute> } />
+      <Route path="/users" element={<ProtectedRoute> <UserPage /> </ProtectedRoute> } />
       
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

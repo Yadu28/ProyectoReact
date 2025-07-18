@@ -6,6 +6,10 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import UserPage from './pages/UserPage/UserPage';
 import NotFoundPage from "./pages/components/NotFoundPage";
 import ProtectedRoute from './pages/components/ProtectedRoute';
+import ResetPasswordPage from "./pages/ResetPasswordPage/ResetPasswordPage";  // Aquí importas el componente
+//import AuxiliaresPage from './pages/AuxiliaresPage/AuxiliaresPage';
+
+//import {UseStatePlay,UseEffectPlay,UseRefPlay} from 'react';
 
 
 function App() {
@@ -13,14 +17,17 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
+
       <Route path="/" element={<LoginPage />} />
       <Route path="/register" element={ <RegisterPage />} />
       <Route path="/forgot" element={ <ForgotPasswordPage />} />
+      <Route path="/reset-password" element={<ResetPasswordPage />} />
 
       <Route path="/dashboard" element={<ProtectedRoute> <DashboardPage /> </ProtectedRoute> } />
       <Route path="/users" element={<ProtectedRoute> <UserPage /> </ProtectedRoute> } />
       
       <Route path="*" element={<NotFoundPage />} />
+
     </Routes>
     </BrowserRouter>
   );

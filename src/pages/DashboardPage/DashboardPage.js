@@ -40,9 +40,10 @@ function DashboardPage() {
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg bg-danger text-white">
+        <nav className="navbar navbar-expand-lg bg-danger navbar-custom"></nav>
         <div className="container">
-          <Link className="navbar-brand" to="/">MiApp</Link>
+          <Link className="navbar-brand text-white" to="/">MAVII</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -70,12 +71,12 @@ function DashboardPage() {
       {/* Main Content */}
       <div className="container mt-5">
         <div className="text-center mb-4">
-          <h1 className="display-5">Bienvenido al Panel de Control</h1>
-          <p className="lead">Administra tus datos, configuraciones y más.</p>
+          <h1 className="text-white">Bienvenido al Panel de Control</h1>
+          <p className="text-light">Administra tus datos, configuraciones y más.</p>
         </div>
 
         <div className="row justify-content-center">
-          <div className="col-md-6">
+          <div className="col-md-20">
             <div className="card shadow">
               <div className="card-body text-center">
                 <h5 className="card-title mb-3">¿Qué deseas hacer?</h5>
